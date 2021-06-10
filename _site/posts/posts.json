@@ -15,5 +15,22 @@
     "preview": {},
     "last_modified": "2021-06-10T15:10:36+02:00",
     "input_file": {}
+  },
+  {
+    "path": "posts/2021-06-10-mon-deuxieme-post-sur-mon-blog-de-gnie/",
+    "title": "mon deuxieme post sur mon blog de génie",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Adrien GARNIER",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2021-06-10",
+    "categories": [],
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\nlibrary(tidyverse) ggplot(mtcars, aes(mpg,tp))+ geom-point()+ theme_bw()\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-06-10T16:56:59+02:00",
+    "input_file": "mon-deuxieme-post-sur-mon-blog-de-gnie.knit.md"
   }
 ]
