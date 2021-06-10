@@ -1,5 +1,5 @@
 ---
-title: "mon deuxieme post sur mon blog de génie"
+title: "mon deuxieme post qui pue un peu"
 description: |
   A short description of the post.
 author:
@@ -12,15 +12,35 @@ output:
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+```{r}
 
-Distill is a publication format for scientific and technical writing, native to the web.
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(viridis)
+library(hrbrthemes)
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+library(gapminder)
+data<-gapminder%>% filter(year == 2007)%>% dplyr:: select(-year)
 
-library(tidyverse)
-ggplot(mtcars, aes(mpg,tp))+
-  geom-point()+
-    theme_bw()
+library("gapminder")
+
+p <- data %>%
+  mutate(gdpPercap=round(gdpPercap,0)) %>%
+  mutate(pop=round(pop/1000000,2)) %>%
+  mutate(lifeExp=round(lifeExp,1)) %>%
+  
+  arrange(desc(pop)) %>%
+  mutate(country = factor(country, country)) %>%
+  
+  mutate(text = paste("Country: ", country, "\nPopulation (M): ", pop, "\nLife Expectancy: ", lifeExp, "\nGdp per capita: ", gdpPercap, sep="")) %>%
+  
+  ggplot( aes(x=gdpPercap, y=lifeExp, size = pop, color = continent, text=text)) +
+  geom_point(alpha=0.7) +
+  scale_size(range = c(1.4, 19), name="Population (M)") +
+  scale_color_viridis(discrete=TRUE, guide=FALSE) +
+  theme_ipsum() +
+  theme(legend.position="none")
+
+pp <- ggplotly(p, tooltip="text")
+pp

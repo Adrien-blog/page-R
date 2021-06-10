@@ -18,7 +18,7 @@
   },
   {
     "path": "posts/2021-06-10-mon-deuxieme-post-sur-mon-blog-de-gnie/",
-    "title": "mon deuxieme post sur mon blog de génie",
+    "title": "mon deuxieme post qui pue un peu",
     "description": "A short description of the post.",
     "author": [
       {
@@ -28,9 +28,9 @@
     ],
     "date": "2021-06-10",
     "categories": [],
-    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\nlibrary(tidyverse) ggplot(mtcars, aes(mpg,tp))+ geom-point()+ theme_bw()\r\n\r\n\r\n\r\n",
+    "contents": "\r\n\r\n\r\nlibrary(ggplot2)\r\nlibrary(dplyr)\r\nlibrary(plotly)\r\nlibrary(viridis)\r\nlibrary(hrbrthemes)\r\n\r\nlibrary(gapminder)\r\ndata<-gapminder%>% filter(year == 2007)%>% dplyr:: select(-year)\r\n\r\nlibrary(\"gapminder\")\r\n\r\np <- data %>%\r\n  mutate(gdpPercap=round(gdpPercap,0)) %>%\r\n  mutate(pop=round(pop/1000000,2)) %>%\r\n  mutate(lifeExp=round(lifeExp,1)) %>%\r\n  \r\n  arrange(desc(pop)) %>%\r\n  mutate(country = factor(country, country)) %>%\r\n  \r\n  mutate(text = paste(\"Country: \", country, \"\\nPopulation (M): \", pop, \"\\nLife Expectancy: \", lifeExp, \"\\nGdp per capita: \", gdpPercap, sep=\"\")) %>%\r\n  \r\n  ggplot( aes(x=gdpPercap, y=lifeExp, size = pop, color = continent, text=text)) +\r\n  geom_point(alpha=0.7) +\r\n  scale_size(range = c(1.4, 19), name=\"Population (M)\") +\r\n  scale_color_viridis(discrete=TRUE, guide=FALSE) +\r\n  theme_ipsum() +\r\n  theme(legend.position=\"none\")\r\n\r\npp <- ggplotly(p, tooltip=\"text\")\r\npp\r\n\r\n\r\npreservea48a99ab380df78f\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-06-10T16:56:59+02:00",
+    "last_modified": "2021-06-10T17:02:56+02:00",
     "input_file": "mon-deuxieme-post-sur-mon-blog-de-gnie.knit.md"
   }
 ]
