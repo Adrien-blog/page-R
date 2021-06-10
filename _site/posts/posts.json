@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome",
+    "description": "Bienvenue sur ma page dédiée à l'analyse statistique !\nIci vous trouverez des exemples de graphiques que j'ai réalisé.",
+    "author": [
+      {
+        "name": "Adrien GARNIER",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2021-06-10",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-06-10T15:10:36+02:00",
+    "input_file": {}
+  }
+]
